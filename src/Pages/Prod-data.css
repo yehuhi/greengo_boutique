@@ -294,9 +294,9 @@ color: green;
         align-items: center;
     }
 
-    .prod-dat-cont{
+    /* .prod-data-cont{
       margin-top: 71px
-    }
+    } */
 
     .cont-prod {
         width: 90%;
@@ -321,6 +321,14 @@ color: green;
         right: 5%;
     }
 
+    .half2 {
+        width: 85%;
+        height: 500px;
+        margin-top: 25px;
+        background-color: transparent;
+        margin-bottom: 100px;
+    }
+    
     .half2{
         width: 85%;
         height: 500px;
