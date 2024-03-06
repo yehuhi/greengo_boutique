@@ -23,18 +23,18 @@
     }
 
     .open-filters {
-        align-items: center;
-        border: 1px solid green;
+        width: 83%;
+        height: 30px;
         border-radius: 20px;
+        border: 1px green solid;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
         box-shadow: 3px 2px #80808099;
         cursor: pointer;
-        display: flex;
-        height: 30px;
         justify-content: center;
         margin-bottom: 5px;
-        /* margin-left: 20px; */
-        padding: 0 10px;
-        width: 85%;
+        margin-left: 20px;
     }
     
     .prods-cont {
@@ -46,8 +46,8 @@
     .filters {
         height: 40px;
         width: 100%;
-        display: flex;
-        justify-content: center;
+        /* display: flex;
+        justify-content: center; */
     }
 
     /* .logo-img {
