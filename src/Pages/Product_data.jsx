@@ -80,7 +80,9 @@ const Product_data = () => {
         const data_cart = JSON.parse(localStorage.getItem('cartItems')) || [];
         setCartItems(data_cart);
         const items = JSON.parse(localStorage.getItem('favoriteItems'));
-        setFavItems([...items])
+        if(items[0]){
+          setFavItems([...items])
+        }
         console.log("FAVORITO PROD > ", favItems);
       }, []);
 
