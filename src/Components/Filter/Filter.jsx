@@ -110,10 +110,10 @@ const Filter = () => {
             <ul className='ul-filter'>
             <li className='li-filter-up'>
                 <div className='cate-plus'>
-                    <span style={{fontWeight:"600"}}>CATEGORIAS</span>
+                    <span style={{fontWeight:"600"}} onClick={()=> setOpenMenuCat(!openMenuCat)}>CATEGORIAS</span>
                     {
                         !openMenuCat?
-                    <HiOutlinePlusSmall onClick={()=> setOpenMenuCat(!openMenuCat)} style={{cursor:"pointer", color:"rgb(128 128 128 / 95%)"}}/>
+                    <HiOutlinePlusSmall  style={{cursor:"pointer", color:"rgb(128 128 128 / 95%)"}}/>
                         :
                     <HiMinusSm onClick={()=> setOpenMenuCat(!openMenuCat)} style={{cursor:"pointer", color:"rgb(128 128 128 / 95%)"}}/>    
                     }
@@ -135,10 +135,10 @@ const Filter = () => {
                 </li>
                 <li className='li-filter-up'>
                 <div className='cate-plus'>
-                    <span style={{fontWeight:"600"}}>MARCAS</span>
+                    <span style={{fontWeight:"600"}} onClick={()=> setOpenMenuBran(!openMenuBran)}>MARCAS</span>
                     {
                         !openMenuBran?
-                    <HiOutlinePlusSmall onClick={()=> setOpenMenuBran(!openMenuBran)} style={{cursor:"pointer", color:"rgb(128 128 128 / 95%)"}}/>
+                    <HiOutlinePlusSmall  style={{cursor:"pointer", color:"rgb(128 128 128 / 95%)"}}/>
                         :
                     <HiMinusSm onClick={()=> setOpenMenuBran(!openMenuBran)} style={{cursor:"pointer", color:"rgb(128 128 128 / 95%)"}}/>    
                     }
@@ -159,11 +159,11 @@ const Filter = () => {
                }
                 </li>
                 <li className='li-filter-up'>
-                <div className='cate-plus'>
+                <div className='cate-plus' onClick={()=> setOpenMenuPric(!openMenuPric)}>
                     <span style={{fontWeight:"600"}}>PRECIOS</span>
                     {
                         !openMenuPric?
-                    <HiOutlinePlusSmall onClick={()=> setOpenMenuPric(!openMenuPric)} style={{cursor:"pointer", color:"rgb(128 128 128 / 95%)"}}/>
+                    <HiOutlinePlusSmall  style={{cursor:"pointer", color:"rgb(128 128 128 / 95%)"}}/>
                         :
                     <HiMinusSm onClick={()=> setOpenMenuPric(!openMenuPric)} style={{cursor:"pointer", color:"rgb(128 128 128 / 95%)"}}/>    
                     }
@@ -184,11 +184,11 @@ const Filter = () => {
                }
                 </li>
                 <li className='li-filter-up'>
-                <div className='cate-plus'>
+                <div className='cate-plus' onClick={()=> setOpenMenuColo(!openMenuColo)}>
                     <span style={{fontWeight:"600"}}>COLORES</span>
                     {
                         !openMenuColo?
-                    <HiOutlinePlusSmall onClick={()=> setOpenMenuColo(!openMenuColo)} style={{cursor:"pointer", color:"rgb(128 128 128 / 95%)"}}/>
+                    <HiOutlinePlusSmall  style={{cursor:"pointer", color:"rgb(128 128 128 / 95%)"}}/>
                         :
                     <HiMinusSm onClick={()=> setOpenMenuColo(!openMenuColo)} style={{cursor:"pointer", color:"rgb(128 128 128 / 95%)"}}/>    
                     }
@@ -209,11 +209,11 @@ const Filter = () => {
                }
                 </li>
                 <li className='li-filter-up'>
-                <div className='cate-plus'>
+                <div className='cate-plus' onClick={()=> setOpenMenuSiz(!openMenuSiz)}>
                     <span style={{fontWeight:"600"}}>TALLAS</span>
                     {
                         !openMenuSiz?
-                    <HiOutlinePlusSmall onClick={()=> setOpenMenuSiz(!openMenuSiz)} style={{cursor:"pointer", color:"rgb(128 128 128 / 95%)"}}/>
+                    <HiOutlinePlusSmall  style={{cursor:"pointer", color:"rgb(128 128 128 / 95%)"}}/>
                         :
                     <HiMinusSm onClick={()=> setOpenMenuSiz(!openMenuSiz)} style={{cursor:"pointer", color:"rgb(128 128 128 / 95%)"}}/>    
                     }
