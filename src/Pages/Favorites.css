@@ -1,0 +1,170 @@
+.your-bag-fav{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-headers{
+    width: 80%;
+    border-bottom: 1px solid #0000004d;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.prod-desc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-fav{
+  font-size: 27px;
+  font-family: sans-serif;
+  letter-spacing: 1.2px;
+}
+
+.prod-actions {
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail {
+    width: 99%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.detail-image{
+    width: 700px;
+    display: flex;
+}
+
+.image-cart{
+    width: 103px;
+}
+
+.image-detail{
+    width: 500px;
+    display: flex;
+}
+
+.price-remove-fav {
+    width: 290px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titles{
+    font-weight: 700;
+}
+
+.data-details{
+    margin-left: 20px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.all-details {
+  height: calc(100vh - 250px);
+  width: 80%;
+  overflow-y: scroll;
+}
+
+.all-details::-webkit-scrollbar {
+    width: 2px;
+    /* width of the entire scrollbar */
+  }
+  
+  .all-details::-webkit-scrollbar-track {
+    background: green;
+    visibility: hidden;
+    /* color of the tracking area */
+  }
+  
+  .all-details::-webkit-scrollbar-thumb {
+    background-color: white;
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 3px solid green;
+    /* creates padding around scroll thumb */
+    margin-left: 10px;
+  }
+  
+  .all-details:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+  }
+
+  .remove-icon{
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  .remove-icon:hover{
+    font-weight: 600;
+  }
+
+  .add-cart-favorite {
+    width: 100px;
+    height: 30px;
+    padding: 0 10px;
+    color: white;
+    line-height: 25px;
+    border-radius: 20px;
+    border: 1px solid black;
+    display: flex;
+    background-color: #00000065;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+  .add-cart-favorite:hover{
+    background-color:white;
+    color:black;
+  }
+
+  .favorite-empty{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    letter-spacing: 1.2PX;
+    font-family: emoji;
+    color: green;
+}
+
+@media (width < 600px){
+
+  .prod-actions {
+    display: none;
+}
+
+.price-remove-fav {
+  width: auto;
+}
+
+.add-cart-favorite {
+  height: auto;
+}
+
+.title-fav{
+  font-size: 23px !important;
+  font-family: sans-serif;
+  text-align: center;
+  letter-spacing: 1.2px;
+}
+.favorite-empty {
+  font-size: 25px;
+}
+}

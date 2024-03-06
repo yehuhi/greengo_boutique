@@ -1,0 +1,39 @@
+.prods-cont {
+    width: 100%;
+    height: calc(100% - 55px);
+    /* background-color: green; */
+    overflow-y: scroll;
+    display: flex;
+    gap: 25px;
+    align-content: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px;
+    margin-top: 0;
+}
+
+.prods-cont::-webkit-scrollbar {
+    width: 7px;
+    /* width of the entire scrollbar */
+  }
+  
+  .prods-cont::-webkit-scrollbar-track {
+    background: rgb(0, 97, 0);
+    visibility: hidden;
+    /* color of the tracking area */
+  }
+  
+  .prods-cont::-webkit-scrollbar-thumb {
+    background-color: white;
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 3px solid rgb(2, 98, 2);
+    /* creates padding around scroll thumb */
+    margin-left: 10px;
+  }
+  
+  .prods-cont:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+  }

@@ -1,0 +1,131 @@
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+
+  .ul-filter {
+    width: 100%;
+    /* height: 70%; */
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    flex-direction: column;
+    padding: 30px 0;
+    align-items: center;
+}
+
+.li-filter-up {
+    width: 75%;
+    /* height: 10px; */
+    border-width: 1px 0px;
+    border-top-style: solid;
+    border-right-style: initial;
+    border-bottom-style: initial;
+    border-left-style: initial;
+    border-top-color: #80808080;
+    border-right-color: initial;
+    border-left-color: initial;
+    border-image: initial;
+    line-height: 25px;
+    padding: 20px 5px;
+    display: flex;
+    /* padding-top: 35px; */
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.open-menu{
+  /* width: 200px;
+  height: 300px;
+  background-color: red; */
+    margin-top: 10px;
+}
+
+.label-input{
+    margin-left: 10px;
+}
+
+
+.li-filter{
+    width: 75%;
+    height: 30px;
+    border-width: 1px 0px;
+    border-top-style: solid;
+    border-right-style: initial;
+    border-bottom-style: solid;
+    border-left-style: initial;
+    border-top-color: #80808080;
+    border-right-color: initial;
+    border-bottom-color: #80808080;
+    border-left-color: initial;
+    border-image: initial;
+    line-height: 25px;
+    padding: 25px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type=checkbox] {
+    margin: 4px 0 0;
+    line-height: normal;
+    width: 20px;
+    height: 20px;
+    color: grey;
+    }
+    input[type=checkbox]:checked{
+        background-color:grey;
+        }
+
+        .cate-plus{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .div-ul{
+           width:100%;
+           height:92%;
+           overflow-y: scroll
+        }
+
+        .div-ul::-webkit-scrollbar {
+            width: 7px;
+            /* width of the entire scrollbar */
+          }
+          
+          .div-ul::-webkit-scrollbar-track {
+            background: green;
+            visibility: hidden;
+            /* color of the tracking area */
+          }
+          
+          .div-ul::-webkit-scrollbar-thumb {
+            background-color: white;
+            /* color of the scroll thumb */
+            border-radius: 20px;
+            /* roundness of the scroll thumb */
+            border: 3px solid green;
+            /* creates padding around scroll thumb */
+            margin-left: 10px;
+          }
+          
+          .div-ul:hover::-webkit-scrollbar-thumb {
+            visibility: visible;
+          }
+
+          
+
+          @media (width < 600px){
+            .div-ul {
+              position: absolute;
+              width: 100%;
+              height: 92%;
+              overflow-y: scroll;
+              background-color: white;
+              z-index: 11111;
+            }          
+        
+        }
