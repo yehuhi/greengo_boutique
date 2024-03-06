@@ -126,6 +126,10 @@ input[type=checkbox] {
               overflow-y: scroll;
               background-color: white;
               z-index: 11111;
-            }          
+            }    
+            
+            .ul-filter {
+              margin-bottom: 100px;
+          }
         
         }

@@ -109,8 +109,8 @@ const Filter = () => {
         <div className='div-ul'>
             <ul className='ul-filter'>
             <li className='li-filter-up'>
-                <div className='cate-plus'>
-                    <span style={{fontWeight:"600"}} onClick={()=> setOpenMenuCat(!openMenuCat)}>CATEGORIAS</span>
+                <div className='cate-plus' onClick={()=> setOpenMenuCat(!openMenuCat)}>
+                    <span style={{fontWeight:"600"}} >CATEGORIAS</span>
                     {
                         !openMenuCat?
                     <HiOutlinePlusSmall  style={{cursor:"pointer", color:"rgb(128 128 128 / 95%)"}}/>
@@ -134,8 +134,8 @@ const Filter = () => {
                }
                 </li>
                 <li className='li-filter-up'>
-                <div className='cate-plus'>
-                    <span style={{fontWeight:"600"}} onClick={()=> setOpenMenuBran(!openMenuBran)}>MARCAS</span>
+                <div className='cate-plus' onClick={()=> setOpenMenuBran(!openMenuBran)}>
+                    <span style={{fontWeight:"600"}} >MARCAS</span>
                     {
                         !openMenuBran?
                     <HiOutlinePlusSmall  style={{cursor:"pointer", color:"rgb(128 128 128 / 95%)"}}/>
