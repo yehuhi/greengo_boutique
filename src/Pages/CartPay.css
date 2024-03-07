@@ -253,18 +253,20 @@
         letter-spacing: 1px;
     }
 
-    .txt-footer-x{
-        width: 100%;
+    .txt-footer-x {
         cursor: pointer;
         display: flex;
         justify-content: flex-end;
-        right: 10px;
         position: relative;
+        right: 10px;
+        width: 100%;
+        top: 10px;
+        font-weight: 800;
     }
 
     .txt-footer-x:hover{
-    font-weight: 600;
-    }
+        color: green;
+        }
 
     .qr-btn {
         margin: 0;
