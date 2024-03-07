@@ -30,6 +30,7 @@
 
 .image-img{
     width: 100%;
+    height: 270px;
 }
 
 .prod-colors{
@@ -126,6 +127,19 @@ color: green;
     .prods {
         width: 170px;
         height: 430px;
+    }
+
+    .image-img{
+        height: 245px;
+    }
+
+
+    .arrow-right-p{
+        top: 30%;
+    }
+
+    .arrow-left-p{
+        top: 30%;
     }
 
 }

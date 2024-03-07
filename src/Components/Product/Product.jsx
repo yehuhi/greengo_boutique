@@ -62,7 +62,7 @@ const Product = (props) => {
         }
 
             <Link to={`/product/${props.id}`}>
-            <img className='image-img prevent-select' style={{height:"270px"}} src={props.image[currentImage]} alt="carousel" />
+            <img className='image-img prevent-select'  src={props.image[currentImage]} alt="carousel" />
             </Link>
             <div className='arrow-left-p '>
               <IoIosArrowBack onClick={(event) => handleArrowClick('prev', event)} size={30} />
