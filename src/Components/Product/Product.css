@@ -51,6 +51,7 @@
 .prod-price{
     font-size: 14px;
     font-family: math;
+    color: grey;
     /* cursor: pointer; */
 }
 
