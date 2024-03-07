@@ -5,6 +5,7 @@ import Modal  from '../Components/Modal/Modal'
 
 const CartPay = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOutCityOpen, setIsModalOutCityOpen] = useState(false);
   const [totalForPay, setTotalForPay] = useState(0);
   const [itemsCart, setItemsCart] = useState([]);
 
@@ -71,9 +72,14 @@ const CartPay = () => {
             </div>
           </div>  
         </div>
-        <div className='txt-footer'>
-            <p>IMPORTANTE saber que el pago de tu compra no incluye envios fuera la ciudad de Barranquilla.</p>
-        </div>
+        {
+          !isModalOutCityOpen?
+          <div className='txt-footer'>
+            <div className='txt-footer-x' onClick={()=>{setIsModalOutCityOpen(!isModalOutCityOpen)}}>X</div>
+              <p><span style={{fontWeight:"800"}}>IMPORTANTE</span> <br/> El pago de tu compra no incluye envios fuera la ciudad de Barranquilla.</p>
+          </div>:""
+        }
+        
         {
           isModalOpen && <Modal closeModal={closeModal} dataCart={itemsCart}/>
         }

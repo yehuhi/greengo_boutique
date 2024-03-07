@@ -114,8 +114,9 @@ const Nabvar = () => {
           isMobile && !openMenu?
       <div className='nav-menu-mobile' ref={menuRef}>
         <FiMenu onClick={()=>setOpenMenu(!openMenu)} style={{fontSize:"35px",color:"#d4d4b6", cursor:"pointer", marginRight:"100px"}}/>
-      </div>:
+      </div>:  isMobile?
         <IoClose onClick={()=>setOpenMenu(!openMenu)} style={{fontSize:"43px",color:"#d4d4b6", cursor:"pointer", marginRight:"92px"}}/>
+        :""
       }
         {
             openMenu?

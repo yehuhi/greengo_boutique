@@ -238,13 +238,32 @@
         width: 100%;
         text-align: center;
         position: fixed;
-        bottom: 0;
+        top: 25%;
+        height: 270px;
         /* padding: 10px 0; */
-        background-color: #c7c6c654;
+        background-color: #c7c6c6;
     }
 
     .txt-footer p {
-        font-weight: 600;
+        /* height: 100%; */
+        font-weight: 500;
+        padding: 30px;
+        font-size: 25px;
+        font-family: math;
+        letter-spacing: 1px;
+    }
+
+    .txt-footer-x{
+        width: 100%;
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-end;
+        right: 10px;
+        position: relative;
+    }
+
+    .txt-footer-x:hover{
+    font-weight: 600;
     }
 
     .qr-btn {
