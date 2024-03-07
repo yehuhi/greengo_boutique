@@ -174,11 +174,9 @@
     }
 
     .cart-pay-cont {
+        height: calc(100% - 40px);
+        margin-top: 2px;
         width: 100%;
-        display: flex;
-        margin-top: -60px;
-        height: calc(100% - 70px);
-        align-items: center;
     }
 
     .card-inside{
@@ -190,31 +188,32 @@
     }
 
     .cart-cont-inside {
-        width: 100%;
-        padding: 30px 0;
-        max-height: calc(100vh - 150px);
-        overflow-y: auto;
+        align-items: center;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         gap: 20px;
+        justify-content: flex-start;
+        /* height: calc(100% - 10px); */
+        overflow-y: auto;
+        /* margin: 80px 0; */
+        margin-top: -140px;
+        width: 100%;
     }
-    .card{
-        margin-top: 420px;
-    }
+    /* .card{
+        margin-top: 500px;
+    } */
     
     .cart-pay-col {
-        width: 80%;
-        max-width: 350px;
-        height: 350px;
-        display: flex;
+        align-items: center;
         background-color: #fafafa;
         border-radius: 10px;
-        box-shadow: 5px 5px 6px 0px rgb(142, 141, 141);
+        box-shadow: 5px 5px 6px 0 #8e8d8d;
+        display: flex;
         flex-direction: column;
-        align-items: center;
+        height: 350px;
         justify-content: space-evenly;
+        max-width: 350px;
+        width: 80%;
     }
     
     .text-qr {
@@ -239,7 +238,7 @@
         text-align: center;
         position: fixed;
         bottom: 0;
-        padding: 10px 0;
+        /* padding: 10px 0; */
         background-color: white;
     }
 
