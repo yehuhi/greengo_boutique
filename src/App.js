@@ -10,6 +10,7 @@ import Favorites from './Pages/Favorites';
 import LoginSignup from './Pages/LoginSignup';
 import Product from './Pages/Product_data';
 import CartPay from './Pages/CartPay';
+import Profile from './Pages/Profile';
 function App() {
   return (
     <div >
@@ -20,6 +21,7 @@ function App() {
         <Route path='/womens' element={<Womens category='womens'/>}/>
         <Route path='/mens' element={<Mens  category='mens'/>}/>
         <Route path='/kids' element={<Kids  category='kids'/>}/>
+        <Route path='/profile' element={<Profile/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/favorites' element={<Favorites/>}/>
         <Route path='/loginSignup' element={<LoginSignup/>}/>

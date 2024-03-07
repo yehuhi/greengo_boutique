@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 import logo from '../Assets/logoback.png';
-import backLogo from '../Assets/backlogo.png';
-import cart_icon from '../Assets/cart_icon.png';
+// import backLogo from '../Assets/backlogo.png';
+// import cart_icon from '../Assets/cart_icon.png';
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 import { IoIosHeart } from "react-icons/io";
-import { HiOutlineShoppingCart } from "react-icons/hi2";
+// import { HiOutlineShoppingCart } from "react-icons/hi2";
+import { SlHandbag } from "react-icons/sl";
 import { IoPersonOutline } from "react-icons/io5";
 import { IoIosSearch } from "react-icons/io";
 import './Nabvar.css'
@@ -87,7 +88,7 @@ const Nabvar = () => {
         <IoIosSearch className='search-icon'/>
         <NavLink to='/cart' className='link'>
         <div className='cart-cont'>
-          <HiOutlineShoppingCart  className='cart-img'/>
+          <SlHandbag  className='cart-img'/>
           {
            (cart.length && cart.length>=0) || cartItemsLenght?
             <div className='cart-counter'>
@@ -122,7 +123,9 @@ const Nabvar = () => {
             openMenu?
             <div className='menu-mobile-back'>
         <div className='menu-mobile-icons'>
-            <IoPersonOutline style={{fontSize:"27px", color:"white"}}/>
+            <NavLink to='/profile' onClick={() => setOpenMenu(false)} className='link'>
+             <IoPersonOutline style={{fontSize:"27px", color:"white"}}/>
+            </NavLink>
 
             {
             favItemsLenght > 0?
@@ -137,7 +140,7 @@ const Nabvar = () => {
 
              <NavLink to='/cart' onClick={() => setOpenMenu(false)} className='link' style={{paddingRight:"30px"}}>
               <div className='cart-cont'>
-                <HiOutlineShoppingCart  className='cart-img' />
+                <SlHandbag  className='cart-img' />
                 {
                 (cart.length && cart.length>=0) || cartItemsLenght?
                   <div className='cart-counter'>
