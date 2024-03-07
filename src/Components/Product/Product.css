@@ -126,7 +126,7 @@ color: green;
 @media (width < 600px){
     .prods {
         width: 170px;
-        height: 430px;
+        height: 370px;
     }
 
     .image-img{
