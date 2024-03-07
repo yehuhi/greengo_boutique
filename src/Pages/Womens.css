@@ -23,7 +23,7 @@
     }
 
     .open-filters {
-        width: 83%;
+        width: 85%;
         height: 30px;
         border-radius: 20px;
         border: 1px green solid;
@@ -34,7 +34,7 @@
         cursor: pointer;
         justify-content: center;
         margin-bottom: 5px;
-        margin-left: 20px;
+        margin-left: 15px;
     }
     
     .prods-cont {

@@ -72,6 +72,8 @@
     }
     .p2 {
         text-align: center;
+        padding: 0;
+        margin: 0 0 10px 0;
     }
 
     .images-hero {

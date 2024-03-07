@@ -3,6 +3,7 @@ import logo from '../Assets/logoback.png';
 import backLogo from '../Assets/backlogo.png';
 import cart_icon from '../Assets/cart_icon.png';
 import { IoMdHeartEmpty } from "react-icons/io";
+import { IoClose } from "react-icons/io5";
 import { IoIosHeart } from "react-icons/io";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
 import { IoPersonOutline } from "react-icons/io5";
@@ -110,10 +111,11 @@ const Nabvar = () => {
 
       {/* MENU MOBILE */}
       {
-          isMobile?
+          isMobile && !openMenu?
       <div className='nav-menu-mobile' ref={menuRef}>
         <FiMenu onClick={()=>setOpenMenu(!openMenu)} style={{fontSize:"35px",color:"#d4d4b6", cursor:"pointer", marginRight:"100px"}}/>
-      </div>:""
+      </div>:
+        <IoClose onClick={()=>setOpenMenu(!openMenu)} style={{fontSize:"43px",color:"#d4d4b6", cursor:"pointer", marginRight:"92px"}}/>
       }
         {
             openMenu?
@@ -149,18 +151,19 @@ const Nabvar = () => {
         
         <div className='menu-div'>
           <ul className="menu-mobile-ul" style={{width:"100%", display:"flex", flexDirection:"column"}}>
-            <li className={`link ${location.pathname === '/' ? 'active' : 'inactive'}`}>
-              <NavLink to='/'>NUEVO</NavLink>
-            </li>
-            <li className={`link ${location.pathname === '/womens' ? 'active' : 'link'}`}>
-              <NavLink to='/womens'>MUJERES</NavLink>
-            </li>
-            <li className={`link ${location.pathname === '/mens' ? 'active' : 'inactive'}`}>
-              <NavLink to='/mens'>HOMBRES</NavLink>
-            </li>
-            <li className={`link ${location.pathname === '/kids' ? 'active' : 'inactive'}`}>
-              <NavLink to='/kids'>NIÑOS</NavLink>
-            </li>
+          <li className={`link ${location.pathname === '/' ? 'active' : 'inactive'}`}>
+            <NavLink to='/' onClick={() => setOpenMenu(false)}>NUEVO</NavLink>
+          </li>
+          <li className={`link ${location.pathname === '/womens' ? 'active' : 'link'}`}>
+            <NavLink to='/womens' onClick={() => setOpenMenu(false)}>MUJERES</NavLink>
+          </li>
+          <li className={`link ${location.pathname === '/mens' ? 'active' : 'inactive'}`}>
+            <NavLink to='/mens' onClick={() => setOpenMenu(false)}>HOMBRES</NavLink>
+          </li>
+          <li className={`link ${location.pathname === '/kids' ? 'active' : 'inactive'}`}>
+            <NavLink to='/kids' onClick={() => setOpenMenu(false)}>NIÑOS</NavLink>
+          </li>
+
           </ul>
         </div>
       </div>:""

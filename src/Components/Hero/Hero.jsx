@@ -6,7 +6,7 @@ const Hero = () => {
     <div className='hero-cont'>
       <div className='div_p'>
         <p className='p1'>LA GUIA DE REGALOS PARA EL DIA DE SAN VALENTIN</p>
-        <p className='p2'>Celebre el Día de San Valentín con colores vivos, looks apasionantes para una cita nocturna y regalos a juego, como nuestro nuevo bolso Tribeca.</p>
+        <p className='p2'>Celebra el Día de San Valentín con colores vivos, looks apasionantes para una cita nocturna y regalos a juego, como nuestro nuevo bolso Tribeca.</p>
       </div>
   
     <div className='images-hero'>
