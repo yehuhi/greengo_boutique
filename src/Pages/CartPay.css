@@ -164,7 +164,7 @@
     
     .title-cartpay {
         display: flex;
-        font-size: 25px;
+        font-size: 20px;
         justify-content: center;
         z-index: 111111;
         height: 40px;
@@ -210,7 +210,7 @@
         box-shadow: 5px 5px 6px 0 #8e8d8d;
         display: flex;
         flex-direction: column;
-        height: 350px;
+        height: 320px;
         justify-content: space-evenly;
         max-width: 350px;
         width: 80%;
@@ -229,20 +229,35 @@
     
     .text-btn {
         text-align: center;
-        padding: 0 30px;
+        padding: 0 10px;
         font-size: 13px;
     }
     
+
     .txt-footer {
         width: 100%;
         text-align: center;
         position: fixed;
         bottom: 0;
         /* padding: 10px 0; */
-        background-color: white;
+        background-color: #c7c6c654;
     }
 
+    .txt-footer p {
+        font-weight: 600;
+    }
 
+    .qr-btn {
+        margin: 0;
+        margin-bottom: 25px;
+        width: 70%;
+        padding: 7px 0;
+        border-radius: 20px;
+        border: 1px green solid;
+        background-color: transparent;
+        color: green;
+        cursor: pointer;
+    }
     
 }
 

@@ -72,7 +72,7 @@ const CartPay = () => {
           </div>  
         </div>
         <div className='txt-footer'>
-            <p>IMPORTANTE saber que el pago de tu compra no incluye envios fuera la ciudad de barranquilla !!!</p>
+            <p>IMPORTANTE saber que el pago de tu compra no incluye envios fuera la ciudad de Barranquilla.</p>
         </div>
         {
           isModalOpen && <Modal closeModal={closeModal} dataCart={itemsCart}/>
