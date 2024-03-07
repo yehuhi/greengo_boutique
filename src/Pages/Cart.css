@@ -288,9 +288,9 @@
             cursor: pointer;
         }
 
-        /* a {
-            margin-left: 20px;
-        } */
+        .all-details {
+            width: 83% !important;
+        }
     }
     
 

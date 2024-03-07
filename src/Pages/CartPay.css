@@ -186,7 +186,7 @@
     }
     
     .img-card{
-        width: 150px;
+        width: 110px;
     }
 
     .cart-cont-inside {
@@ -240,6 +240,7 @@
         position: fixed;
         bottom: 0;
         padding: 10px 0;
+        background-color: white;
     }
 
 

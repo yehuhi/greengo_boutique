@@ -129,7 +129,7 @@ const Nabvar = () => {
               <IoIosHeart className='lev-icon' style={{color:"red"}}/>
             </NavLink>
             :
-            <NavLink to='/favorites' className='link'>
+            <NavLink to='/favorites' onClick={() => setOpenMenu(false)} className='link'>
               <IoMdHeartEmpty className='lev-icon'/>
             </NavLink>
             }
