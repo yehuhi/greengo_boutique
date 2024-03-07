@@ -125,7 +125,7 @@ const Nabvar = () => {
 
             {
             favItemsLenght > 0?
-              <NavLink to='/favorites' className='link'>
+              <NavLink to='/favorites' onClick={() => setOpenMenu(false)} className='link'>
               <IoIosHeart className='lev-icon' style={{color:"red"}}/>
             </NavLink>
             :
@@ -134,7 +134,7 @@ const Nabvar = () => {
             </NavLink>
             }
 
-             <NavLink to='/cart' className='link' style={{paddingRight:"30px"}}>
+             <NavLink to='/cart' onClick={() => setOpenMenu(false)} className='link' style={{paddingRight:"30px"}}>
               <div className='cart-cont'>
                 <HiOutlineShoppingCart  className='cart-img' />
                 {
