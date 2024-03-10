@@ -1,19 +1,16 @@
 import React, { useEffect, useState, useRef } from 'react';
 import logo from '../Assets/logoback.png';
-// import backLogo from '../Assets/backlogo.png';
-// import cart_icon from '../Assets/cart_icon.png';
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 import { IoIosHeart } from "react-icons/io";
-// import { HiOutlineShoppingCart } from "react-icons/hi2";
 import { SlHandbag } from "react-icons/sl";
 import { IoPersonOutline } from "react-icons/io5";
 import { IoIosSearch } from "react-icons/io";
 import './Nabvar.css'
 import { FiMenu } from "react-icons/fi";
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, Navigate, useLocation } from 'react-router-dom';
 import { ShopState } from '../../Context/ShopProvider';
-
+import { useAuth } from '../../Context/authContext/index';      
 
 const Nabvar = () => {
   const {filtered, setFiltered, favorite, setFavorite, cart, setCart, cartCount, setCartCount } = ShopState();
@@ -24,6 +21,8 @@ const Nabvar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
   const menuRef = useRef(null);
+  const { userLoggedIn } = useAuth();
+  console.log("userLoggedIn > ", userLoggedIn);
 
   useEffect(() => {
     const data_cart = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -63,6 +62,7 @@ const Nabvar = () => {
 
   return (
     <div className='navbar'>
+      
       <div className="nav-logo">
         <NavLink to='/'>
           <img className='logo-img' src={logo} alt="logo" />
@@ -107,7 +107,17 @@ const Nabvar = () => {
           <IoMdHeartEmpty className='lev-icon'/>
         </NavLink>
         }
-        <button>Iniciar Sesion</button>      
+        {
+          !userLoggedIn?
+          <NavLink to='/login' className='link'>
+            <button>Iniciar Sesion</button>      
+          </NavLink>:
+          <NavLink to='/profile' onClick={() => setOpenMenu(false)} className='link'>
+          <IoPersonOutline style={{fontSize:"27px", color:"white"}}/>
+         </NavLink>
+          
+        }
+          
       </div>
 
       {/* MENU MOBILE */}

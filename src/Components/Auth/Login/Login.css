@@ -1,0 +1,112 @@
+.login_content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -40px;
+}
+
+.content_form{
+    width: 35%;
+    height: 60%;
+    background-color: #0b460b;
+    border-radius: 20px;
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs_form {
+    width: 100%;
+    height: 50%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs_form_signup {
+    width: 100%;
+    height: 60%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input_form {
+    outline: none;
+    width: calc(100% - 15px);
+    height: 50%;
+    padding-left: 15px;
+    border-radius: 7px;
+    border: none;
+}
+
+.input_fields{
+    width: 50%;
+    height: 30%;
+}
+
+.title{
+    font-size: 30px;
+    color: white;
+}
+
+.title-signup{
+    font-size: 30px;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.submit_btn{
+    padding: 10px 45px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.submit_btn:hover{
+    background-color: white;
+    color: green;
+}
+
+.line{
+    width: 50%;
+    margin: 25px 0px;
+}
+
+.google_btn{
+    border: 1px solid white;
+    padding: 5px 15px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+
+.google_btn:hover{
+    background-color: white;
+    color: green;
+}
+
+.signup_btn{
+    cursor: pointer;
+}
+
+.no_register{
+    color: white;
+}
+.signup_btn:hover{
+color:grey
+}
+
+
+

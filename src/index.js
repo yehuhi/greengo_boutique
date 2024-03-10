@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import ShopProvider from "./Context/ShopProvider";
+import { AuthProvider } from "./Context/authContext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ShopProvider>
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </ShopProvider>
 );
 

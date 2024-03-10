@@ -7,10 +7,11 @@ import Mens from './Pages/Mens';
 import Kids from './Pages/Kids';
 import Cart from './Pages/Cart';
 import Favorites from './Pages/Favorites';
-import LoginSignup from './Pages/LoginSignup';
 import Product from './Pages/Product_data';
 import CartPay from './Pages/CartPay';
 import Profile from './Pages/Profile';
+import LoginPage from './Pages/LoginPage';
+import Signup from './Pages/Signup';
 function App() {
   return (
     <div >
@@ -24,7 +25,8 @@ function App() {
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/favorites' element={<Favorites/>}/>
-        <Route path='/loginSignup' element={<LoginSignup/>}/>
+        <Route path='/login' element={<LoginPage/>}/>
+        <Route path='/signup' element={<Signup/>}/>
         
         <Route path='/product' element={<Product/>}>
           <Route path=':productID' element={<Product/>}/>

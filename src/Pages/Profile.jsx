@@ -1,15 +1,32 @@
 import React from 'react'
 import { BsHandbagFill } from "react-icons/bs";
 import './Profile.css'
+import { useAuth } from '../Context/authContext/';      
+import { doSignOut } from '../firebase/auth';
+import { useNavigate } from 'react-router-dom';
+import { IoIosLogOut } from "react-icons/io";
+import { PiSignIn } from "react-icons/pi";
+
+
+
 const Profile = () => {
+    const navigate = useNavigate();
+    const { userLoggedIn } = useAuth();
+
 
   return (
-    <div style={{width:"100%", height:"100%", marginTop:"71px"}}>
+    <div className='content-prof'>
+       <div className='prof-title'><span >Datos Personales</span></div>
+       
+       <div className='order-div'>
+       <span className='order-btn'>Mis Ordenes &nbsp;<BsHandbagFill className='bag'/></span>
+       {
+        userLoggedIn?
+        <button className='order-btn' onClick={()=>{doSignOut().then(()=>{navigate('/')})}}>Desconectarse&nbsp;&nbsp;<IoIosLogOut className='sign'/></button>
+        :<button className='order-btn' onClick={()=>{navigate('login')}}>Conectarse&nbsp;&nbsp;<PiSignIn className='bag'/></button>
+       }
+       </div>
         <div className='prof-content'>
-            <div className='prof-title'><span>Datos Personales</span></div>
-            <div className='order-div'>
-                <span className='order-btn'>Mis Ordenes &nbsp;<BsHandbagFill className='bag'/></span>
-            </div>
             <div className='form'>
                 <label htmlFor="fullname">Nombre</label>
                 <input className='inputs' type="text" name="fullname" id="fullname" />
