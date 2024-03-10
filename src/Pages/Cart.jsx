@@ -149,7 +149,7 @@ const Cart = () => {
   return (
     <div style={{width:"100%", height:"100vh",marginTop:"81px"}}>
       <div className='your-bag'>
-      <span style={{fontSize:"27px",fontFamily:"sans-serif", letterSpacing:"1.2px"}}>MI CARRITO DE COMPRAS</span>
+      <span style={{fontSize:"27px",fontFamily:"sans-serif", letterSpacing:"1.2px"}}>MI BOLSO DE COMPRAS</span>
       <span style={{fontSize:"14px"}}>Total: <span style={{fontWeight:"600"}}>${totalPrice > 0?totalPrice+",000":"0"}</span></span>
       </div>
       
@@ -254,7 +254,7 @@ const Cart = () => {
             </div>
             })
           }
-          {!totalPrice?<div className='cart-empty'>TU CARRITO DE COMPRAS ESTA VACIO</div>:""}
+          {!totalPrice?<div className='cart-empty'>TU BOLSO DE COMPRAS ESTA VACIO</div>:""}
         </div>
         
        
