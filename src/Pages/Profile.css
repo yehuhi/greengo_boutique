@@ -125,19 +125,20 @@ label{
     }
 
     .order-div {
-        width: 100%;
+        width: 80%;
         margin: 10px 0;
+        gap: 20px;
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
     }
 
     .order-btn {
         border: 1px solid green;
         font-size: 14px;
         border-radius: 15px;
-        padding: 1px 10px;
+        padding: 5px 10px;
         cursor: pointer;
-        margin-right: 35px;
+        margin-right: 0;
     }
 
     .bag{

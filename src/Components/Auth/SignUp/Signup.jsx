@@ -22,7 +22,7 @@ const SignUp = () => {
     };
 
   return (
-    <div className='login_content'>
+    <div className='signup_content'>
         {
             userLoggedIn && (<Navigate to={'/profile'} replace={true}/>)
         }

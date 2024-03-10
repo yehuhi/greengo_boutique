@@ -46,12 +46,12 @@ const Login = () => {
             </div>
             <div className='inputs_form'>
                 <div className='input_fields'>
-                    <span style={{color:"white"}}>Email</span>
+                    <span className='field-name'>Email</span>
                     <input value={email} onChange={(e)=>{setEmail(e.target.value)}} className='input_form' type="email" name="email" id="email" />
                 </div>
                 
                 <div className='input_fields'>
-                    <span style={{color:"white"}}>Contraseña</span>
+                    <span className='field-name'>Contraseña</span>
                     <input value={password} onChange={(e)=>{setPassword(e.target.value)}} className='input_form' type="password" name="passw" id="passw" />
                 </div>
                 {
@@ -59,7 +59,7 @@ const Login = () => {
                         <span style={{color:"green", fontSize:"14px"}}>{errorMesg}</span>
                     )
                 }
-                <input onClick={(e)=>{onSubmit(e)}} className='submit_btn' type="submit" value="Conectar" />
+                <input onClick={(e)=>{onSubmit(e)}} className='submit_btn' type="submit" value="Conectarse" />
             </div>
             <div>
                 <span className='no_register'>No tienes una cuenta?<span>&nbsp;

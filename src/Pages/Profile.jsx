@@ -23,7 +23,7 @@ const Profile = () => {
        {
         userLoggedIn?
         <button className='order-btn' onClick={()=>{doSignOut().then(()=>{navigate('/')})}}>Desconectarse&nbsp;&nbsp;<IoIosLogOut className='sign'/></button>
-        :<button className='order-btn' onClick={()=>{navigate('login')}}>Conectarse&nbsp;&nbsp;<PiSignIn className='bag'/></button>
+        :<button className='order-btn' onClick={()=>{navigate('/login')}}>Conectarse&nbsp;&nbsp;<PiSignIn className='bag'/></button>
        }
        </div>
         <div className='prof-content'>
