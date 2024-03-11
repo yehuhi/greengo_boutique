@@ -38,7 +38,7 @@ const Login = () => {
   return (
     <div className='login_content'>
         {
-            userLoggedIn && (<Navigate to={'/'} replace={true}/>)
+            userLoggedIn && (<Navigate to={'/profile'} replace={true}/>)
         }
         <div className='content_form'>
             <div className="title">

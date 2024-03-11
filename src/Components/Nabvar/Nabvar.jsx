@@ -133,10 +133,15 @@ const Nabvar = () => {
             openMenu?
             <div className='menu-mobile-back'>
         <div className='menu-mobile-icons'>
+        {
+          !userLoggedIn?
+          <NavLink to='/login' onClick={() => setOpenMenu(false)} className='link'>
+            <IoPersonOutline style={{fontSize:"27px", color:"white"}}/>    
+          </NavLink>:
             <NavLink to='/profile' onClick={() => setOpenMenu(false)} className='link'>
              <IoPersonOutline style={{fontSize:"27px", color:"white"}}/>
             </NavLink>
-
+        }
             {
             favItemsLenght > 0?
               <NavLink to='/favorites' onClick={() => setOpenMenu(false)} className='link'>

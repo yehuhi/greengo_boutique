@@ -111,6 +111,11 @@ label{
     overflow-y: auto;
 }
 
+.labels{
+    font-size: 10px;
+    color: green;
+}
+
 .content-prof{
     margin-top: 71px;
 }
