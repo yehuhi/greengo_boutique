@@ -30,7 +30,7 @@ const CartPay = () => {
     setTimeout(() => {
       localStorage.setItem('cartItems', JSON.stringify([]));
       navigate('/profile');
-    }, 3000);
+    }, 5000);
   };
 
   useEffect(() => {
@@ -44,12 +44,16 @@ const CartPay = () => {
   return (
     <div className="cart-container">
       {isLoading &&
-        <div className="loading-spinner">
-          <img
-            src={loadingImg} // Replace with the path to your image
-            alt="Loading..."
-            className="spinner-image"
-          />
+        <div className="overlay">
+          <div className="loading-spinner">
+            <img
+              src={loadingImg} // Replace with the path to your image
+              alt="Loading..."
+              className="spinner-image"
+            />
+            <br />
+            <span style={{ color: 'white' }}>Loading...</span>
+          </div>
         </div>}
       <div className="title-cartpay">
         <p style={{ fontWeight: '600', letterSpacing: '1.2px' }}>

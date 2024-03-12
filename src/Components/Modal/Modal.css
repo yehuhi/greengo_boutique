@@ -104,37 +104,6 @@
   font-weight: bold;
 }
 
-.loading-spinner-container {
-  position: relative;
-}
-
-.loading-spinner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: spin 4s linear infinite;
-}
-
-.spinner-image {
-  width: 50px; /* Adjust the size of the image */
-  height: auto;
-}
-
-@keyframes spin {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.5);
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-
-
-
 
 @media (width < 600px) {
   .modal-content {
