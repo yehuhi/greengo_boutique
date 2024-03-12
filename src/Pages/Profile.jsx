@@ -72,6 +72,12 @@ const Profile = () => {
         setPhone(userData.phone);
         setCity(userData.city);
         setAddress(userData.address);
+      } else if (auth.currentUser) {
+        setFullname(auth.currentUser.displayName);
+        setEmail(auth.currentUser.email);
+        setPhone(auth.currentUser.phoneNumber);
+        setCity('');
+        setAddress('');
       } else {
         alert('No data available for the current user');
       }
