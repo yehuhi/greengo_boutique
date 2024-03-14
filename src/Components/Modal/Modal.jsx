@@ -112,7 +112,7 @@ const Modal = ({ closeModal, dataCart }) => {
       const closeBtn = document.getElementsByClassName('close')[0];
       closeBtn.onclick = () => {
         modal.style.display = 'none';
-        closeModal(); // Close modal through parent function
+        closeModal('close'); // Close modal through parent function
       };
 
       // Clean up event listener on unmount

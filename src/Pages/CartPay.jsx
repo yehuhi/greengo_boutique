@@ -7,8 +7,19 @@ import { getDatabase, ref, set, push, get } from '../firebase/firebase';
 // import { useAuth } from '../../Context/authContext/index';
 import loadingImg from '../Components/Assets/logo2.png';
 import { useNavigate } from 'react-router-dom';
+import { ShopState } from '../Context/ShopProvider';
 
 const CartPay = () => {
+  const {
+    filtered,
+    setFiltered,
+    favorite,
+    setFavorite,
+    cart,
+    setCart,
+    cartCount,
+    setCartCount,
+  } = ShopState();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalOutCityOpen, setIsModalOutCityOpen] = useState(false);
   const [totalForPay, setTotalForPay] = useState(0);
@@ -22,15 +33,17 @@ const CartPay = () => {
     setIsModalOpen(true);
   };
 
-  const closeModal = () => {
+  const closeModal = value => {
     setIsModalOpen(false);
+    if (value !== 'close') {
+      setIsLoading(true);
 
-    setIsLoading(true);
-
-    setTimeout(() => {
-      localStorage.setItem('cartItems', JSON.stringify([]));
-      navigate('/profile');
-    }, 5000);
+      setTimeout(() => {
+        localStorage.setItem('cartItems', JSON.stringify([]));
+        setCartCount('');
+        navigate('/profile');
+      }, 5000);
+    }
   };
 
   useEffect(() => {
