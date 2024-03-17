@@ -7,6 +7,20 @@
     align-items: center; */
 }
 
+.order-btnx {
+    border: 1px solid green;
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 0;
+}
+
+.oder-btn:hover{
+    background-color: green;
+    color: white;
+}
+
 .title-cartpay {
     display: flex;
     font-size: 25px;
@@ -340,6 +354,8 @@
         font-size: 25px;
         font-family: math;
         letter-spacing: 1px;
+        display: flex;
+        align-items: center;
     }
 
     .txt-footer-x {

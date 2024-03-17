@@ -5,7 +5,7 @@ import Modal from '../Components/Modal/Modal';
 import { app, auth, db } from '../firebase/firebase';
 import { getDatabase, ref, set, push, get } from 'firebase/database';
 import loadingImg from '../Components/Assets/logo2.png';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ShopState } from '../Context/ShopProvider';
 
 const CartPay = () => {
@@ -18,8 +18,11 @@ const CartPay = () => {
     setCart,
     cartCount,
     setCartCount,
+    user,
+    setUser,
   } = ShopState();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalCheckOut, setIsModalCheckOut] = useState(false);
   const [isModalOutCityOpen, setIsModalOutCityOpen] = useState(false);
   const [totalForPay, setTotalForPay] = useState(0);
   const [itemsCart, setItemsCart] = useState([]);
@@ -31,6 +34,10 @@ const CartPay = () => {
     setIsModalOpen(true);
   };
 
+  const openCheckOutModal = () => {
+    setIsModalCheckOut(true);
+  };
+
   const closeModal = value => {
     setIsModalOpen(false);
     if (value !== 'close') {
@@ -40,7 +47,7 @@ const CartPay = () => {
       const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Month starts from 0
       const year = currentDate.getFullYear();
       const orderDate = `${day}/${month}/${year}`;
-      console.log('TEST orderDate> ', orderDate);
+      // console.log('TEST orderDate> ', orderDate);
       const updatedItemsCart = itemsCart.map(item => {
         return {
           ...item,
@@ -66,9 +73,10 @@ const CartPay = () => {
               status: 'Pendiente',
               items: updatedItemsCart,
             });
-            alert(
-              'Tu compra se encuentra en estado PENDIENTE.\n Puedes revisar tu PERFIL > ORDENES'
-            );
+
+            // alert(
+            //   'Tu compra se encuentra en estado PENDIENTE.\n Puedes revisar tu PERFIL > ORDENES'
+            // );
           }
         } catch (error) {
           console.error('Error saving/updating data:', error);
@@ -79,9 +87,10 @@ const CartPay = () => {
       saveOrUpdateData();
 
       setTimeout(() => {
+        setIsLoading(false);
+        openCheckOutModal();
         localStorage.setItem('cartItems', JSON.stringify([]));
         setCartCount('');
-        navigate('/profile');
       }, 5000);
     }
   };
@@ -92,6 +101,7 @@ const CartPay = () => {
     setTotalForPay(data_cart_pay);
     const data_cart = JSON.parse(localStorage.getItem('itemsCart')) || 0;
     setItemsCart(data_cart);
+    console.log('USER CONNECTED > ', user);
   }, []);
 
   return (
@@ -208,6 +218,31 @@ const CartPay = () => {
                 El pago de tu compra no incluye envios fuera de la ciudad de
                 Barranquilla.
               </span>
+            </p>
+          </div>
+        : ''}
+
+      {isModalCheckOut
+        ? <div className="txt-footer">
+            <div
+              className="txt-footer-x"
+              onClick={() => {
+                setIsModalCheckOut(!setIsModalCheckOut);
+              }}
+            >
+              X
+            </div>
+            <p>
+              <span style={{ fontWeight: '800', color: '#ae9c66' }}>
+                Hola {user.userName},
+              </span>{' '}
+              <span>
+                Tu compra se encuentra en estado PENDIENTE. Puedes revisar tus
+                ORDENES.
+              </span>
+              <Link to="/orders" style={{ marginTop: '20px' }}>
+                <button className="order-btnx">Ir a mis Ordenes</button>
+              </Link>
             </p>
           </div>
         : ''}

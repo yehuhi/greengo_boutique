@@ -6,6 +6,7 @@ import { FaRegClock } from 'react-icons/fa';
 import { FaRegCalendarAlt } from 'react-icons/fa';
 import { app, auth, db } from '../firebase/firebase';
 import { getDatabase, ref, set, push, get } from 'firebase/database';
+import { useNavigate } from 'react-router-dom';
 
 const Orders = () => {
   const {
@@ -20,8 +21,17 @@ const Orders = () => {
   const [favoriteItems, setFavoriteItems] = useState([]);
   const [favoriteItemsEnd, setFavoriteItemsEnd] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
+  const navigate = useNavigate();
 
   const fetchOrders = async () => {
+    const currentUser = auth.currentUser;
+
+    if (!currentUser) {
+      // User is not logged in, handle this case (e.g., redirect to login)
+      navigate('/login');
+      return;
+    }
+
     const userId = auth.currentUser.uid;
     const ordersRef = ref(db, `orders/${userId}`);
 
@@ -91,7 +101,7 @@ const Orders = () => {
       </div>
 
       <div className="scrollable-container">
-        <div style={{ marginBottom: '90px' }}>
+        <div style={{ marginBottom: '150px' }}>
           {favoriteItemsEnd.map((item, i) =>
             <div className="prod-desc" key={i}>
               <div className="dateOrder">

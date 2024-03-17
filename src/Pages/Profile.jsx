@@ -8,8 +8,21 @@ import { IoIosLogOut } from 'react-icons/io';
 import { PiSignIn } from 'react-icons/pi';
 import { app, auth, db } from '../firebase/firebase';
 import { getDatabase, ref, set, push, get } from 'firebase/database';
+import { ShopState } from '../Context/ShopProvider';
 
 const Profile = () => {
+  const {
+    filtered,
+    setFiltered,
+    favorite,
+    setFavorite,
+    cart,
+    setCart,
+    cartCount,
+    setCartCount,
+    user,
+    setUser,
+  } = ShopState();
   const navigate = useNavigate();
   const { userLoggedIn } = useAuth();
   const [email, setEmail] = useState('');
@@ -20,7 +33,15 @@ const Profile = () => {
 
   const saveOrUpdateData = async () => {
     const db = getDatabase(app);
-    const userId = auth.currentUser.uid;
+    const currentUser = auth.currentUser;
+
+    if (!currentUser) {
+      // User is not logged in, handle this case (e.g., redirect to login)
+      navigate('/login');
+      return;
+    }
+
+    const userId = currentUser.uid;
     const userRef = ref(db, `users/${userId}`);
 
     try {
@@ -60,7 +81,15 @@ const Profile = () => {
   const fetchData = async () => {
     console.log('auth > ', auth);
     const db_data = getDatabase(app);
-    const userId = auth.currentUser.uid;
+    const currentUser = auth.currentUser;
+
+    if (!currentUser) {
+      // User is not logged in, handle this case (e.g., redirect to login)
+      navigate('/login');
+      return;
+    }
+
+    const userId = currentUser.uid;
     const userRef = ref(db_data, `users/${userId}`);
 
     try {
@@ -72,14 +101,11 @@ const Profile = () => {
         setPhone(userData.phone);
         setCity(userData.city);
         setAddress(userData.address);
-      } else if (auth.currentUser) {
-        setFullname(auth.currentUser.displayName);
-        setEmail(auth.currentUser.email);
-        setPhone(auth.currentUser.phoneNumber);
-        setCity('');
-        setAddress('');
+        console.log('USER CONNECTED > ', userData);
+        setUser(userData);
       } else {
-        alert('No data available for the current user');
+        // Handle case where user data does not exist
+        console.log('No data available for the current user');
       }
     } catch (error) {
       console.error('Error fetching data:', error);

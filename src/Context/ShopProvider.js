@@ -7,6 +7,7 @@ const ShopProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     const [favorite, setFavorite] = useState([]);
     const [cartCount, setCartCount] = useState(0);
+    const [user, setUser] = useState({});
 
     
     // const address = 'https://dashboard-be.up.railway.app';
@@ -26,8 +27,8 @@ const ShopProvider = ({ children }) => {
     return (
       <ShopContext.Provider
         value={{
-        //  user,
-        //  setUser,
+         user,
+         setUser,
          filtered,
          setFiltered,
          cart,
