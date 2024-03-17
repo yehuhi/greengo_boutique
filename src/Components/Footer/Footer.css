@@ -1,0 +1,136 @@
+.footer-container{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    background-color: #cea65f87;
+}
+
+.footer-txt{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer-img{
+    width: 200px;
+}
+
+.footer-links {
+    width: 40%;
+    display: flex;
+    gap: 100px;
+    font-weight: 700;
+    justify-content: center;
+}
+
+.link-foo {
+    width: 100%;
+    border-right: 1px white solid;
+}
+
+.foteer-texts{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+.texts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.txt-span{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    text-wrap: nowrap;
+}
+
+.icons-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.icons-foo{
+    color: #007f00;
+}
+
+
+@media (width < 600px) {
+    .footer-container {
+        width: 100%;
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: green;
+        margin-bottom: 10px;
+        background-color: #cea65f87;
+        justify-content: space-evenly;
+    }
+
+    .footer-img {
+        width: 150px;
+    }
+
+    .footer-txt {
+        width: 80%;
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .texts {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* gap: 20px; */
+        align-items: center;
+    }
+
+    .txt-span {
+        display: flex;
+        width: 100%;
+        text-wrap: pretty;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-links {
+        width: 40%;
+        display: none;
+        gap: 100px;
+        font-weight: 700;
+        justify-content: center;
+    }
+
+    .icons-footer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        justify-content: center;
+        padding-top: 0;
+    }
+
+
+
+
+
+}
