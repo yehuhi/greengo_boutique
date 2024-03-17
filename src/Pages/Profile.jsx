@@ -97,7 +97,12 @@ const Profile = () => {
         <span>Datos Personales</span>
       </div>
 
-      <div className="order-div">
+      <div
+        className="order-div"
+        onClick={() => {
+          navigate('/orders');
+        }}
+      >
         <span className="order-btn">
           Mis Ordenes &nbsp;<BsHandbagFill className="bag" />
         </span>

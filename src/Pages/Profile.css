@@ -104,6 +104,11 @@ label{
 
 }
 
+.labels{
+    font-size: 11px;
+    color: green;
+}
+
 @media (width < 600px) {
 .prof-content{
     width: 100%;

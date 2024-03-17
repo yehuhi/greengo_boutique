@@ -12,6 +12,7 @@ import CartPay from './Pages/CartPay';
 import Profile from './Pages/Profile';
 import LoginPage from './Pages/LoginPage';
 import Signup from './Pages/Signup';
+import Orders from './Pages/Orders';
 function App() {
   return (
     <div >
@@ -33,6 +34,7 @@ function App() {
         </Route>
 
         <Route path='/cart-pay' element={<CartPay/>}/>
+        <Route path='/orders' element={<Orders/>}/>
 
         
       </Routes>
