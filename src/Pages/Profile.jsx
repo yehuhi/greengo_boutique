@@ -123,15 +123,19 @@ const Profile = () => {
         <span>Datos Personales</span>
       </div>
 
-      <div
-        className="order-div"
-        onClick={() => {
-          navigate('/orders');
-        }}
-      >
-        <span className="order-btn">
+      <div className="order-div">
+        {/* <span className="order-btn">
           Mis Ordenes &nbsp;<BsHandbagFill className="bag" />
-        </span>
+        </span> */}
+
+        <button
+          className="order-btn"
+          onClick={() => {
+            navigate('/orders');
+          }}
+        >
+          Mis Ordenes &nbsp;<BsHandbagFill className="sign" />
+        </button>
         {userLoggedIn
           ? <button
               className="order-btn"
@@ -141,7 +145,7 @@ const Profile = () => {
                 });
               }}
             >
-              Desconectarse&nbsp;&nbsp;<IoIosLogOut className="sign" />
+              Salir&nbsp;&nbsp;<IoIosLogOut className="sign" />
             </button>
           : <button
               className="order-btn"
