@@ -65,9 +65,12 @@
     padding-top: 10px;
 }
 
-.icons-foo{
+.icons-foo {
     color: #007f00;
+    font-size: 20px;
 }
+
+
 
 
 @media (width < 600px) {
@@ -129,7 +132,9 @@
         padding-top: 0;
     }
 
-
+    .icons-foo {
+        font-size: 25px;
+    }
 
 
 

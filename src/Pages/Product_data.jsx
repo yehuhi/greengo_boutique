@@ -28,6 +28,7 @@ const Product_data = () => {
   const [cartItems, setCartItems] = useState([]);
   const [favItems, setFavItems] = useState([]);
   const [showToast, setShowToast] = useState(false);
+  const [showFavToast, setShowFavToast] = useState(false);
   const [showWarningToast, setShowWarningToast] = useState(false);
 
   const handleShowToast = color => {
@@ -37,6 +38,11 @@ const Product_data = () => {
 
   const handleWarningShowToast = color => {
     setShowWarningToast(true);
+    setTimeout(() => setShowToast(false), 3000); // Hide after 3 seconds
+  };
+
+  const handleFavShowToast = color => {
+    setShowFavToast(true);
     setTimeout(() => setShowToast(false), 3000); // Hide after 3 seconds
   };
 
@@ -104,6 +110,7 @@ const Product_data = () => {
       setFavItems(updatedFavorite);
       localStorage.setItem('favoriteItems', JSON.stringify(updatedFavorite));
     }
+    handleFavShowToast();
   };
 
   const removeFromFavorite = id => {
@@ -254,6 +261,13 @@ const Product_data = () => {
           duration={3000}
           color="greenyellow"
           onClose={() => setShowToast(false)}
+        />}
+      {showFavToast &&
+        <Toast
+          message="AGREGADO A TUS FAVORITOS!"
+          duration={3000}
+          color="rose"
+          onClose={() => setShowFavToast(false)}
         />}
       {showWarningToast &&
         <Toast

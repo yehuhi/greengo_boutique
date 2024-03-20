@@ -6,6 +6,7 @@ import Breadcrum from '../Components/Breadcrum/Breadcrum';
 import { ShopState } from '../Context/ShopProvider';
 
 const Womens = ({ filterBy }) => {
+  const { filtered, setFiltered } = ShopState();
   const [openFilters, setOpenFilters] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -29,18 +30,17 @@ const Womens = ({ filterBy }) => {
   };
 
   return (
-    <div className='women-cont'>
+    <div className="women-cont">
       <Breadcrum page={'womens'} />
-      <div className='filters'>
-        {isMobile && (
-          <div className='open-filters' onClick={toggleFilters}>
+      <div className="filters">
+        {isMobile &&
+          <div className="open-filters" onClick={toggleFilters}>
             {openFilters ? 'CERRAR FILTROS' : 'FILTROS'}
-          </div>
-        )}
+          </div>}
         {isMobile && openFilters && <Filter />}
+        {!isMobile && <Filter />} {/* Always render Filter for non-mobile */}
       </div>
-      <div className='new-container'>
-        {!isMobile && <Filter />}
+      <div className="new-container">
         <Products />
       </div>
     </div>
@@ -48,5 +48,3 @@ const Womens = ({ filterBy }) => {
 };
 
 export default Womens;
-
-
