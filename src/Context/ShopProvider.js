@@ -8,21 +8,11 @@ const ShopProvider = ({ children }) => {
     const [favorite, setFavorite] = useState([]);
     const [cartCount, setCartCount] = useState(0);
     const [user, setUser] = useState({});
+    const [breadCrum, setBreadCrum] = useState("");
 
-    
-    // const address = 'https://dashboard-be.up.railway.app';
-    // const address = 'http://localhost:5000';
-    // const address_web = 'https://cheerful-cucurucho-361367.netlify.app';
-    // const address_web = 'http://localhost:3000';
   
     useEffect(() => {
-      // const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-      // let obj = {};
-      // Object.assign(obj, userInfo);
-      // obj.notifications = [];
-      // setUser(obj);
     }, [cart, favorite]);
-    // const socket = useMemo(() => io(address), []);
   
     return (
       <ShopContext.Provider
@@ -36,7 +26,9 @@ const ShopProvider = ({ children }) => {
          favorite,
          setFavorite,
          cartCount,
-         setCartCount
+         setCartCount,
+         breadCrum,
+         setBreadCrum
         }}
       >
         {' '}

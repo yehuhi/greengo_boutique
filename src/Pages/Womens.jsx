@@ -38,9 +38,10 @@ const Womens = ({ filterBy }) => {
             {openFilters ? 'CERRAR FILTROS' : 'FILTROS'}
           </div>}
         {isMobile && openFilters && <Filter />}
-        {!isMobile && <Filter />} {/* Always render Filter for non-mobile */}
+        {/* {!isMobile && <Filter />} Always render Filter for non-mobile */}
       </div>
       <div className="new-container">
+        {!isMobile && <Filter />}
         <Products />
       </div>
     </div>
