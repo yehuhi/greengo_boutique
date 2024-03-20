@@ -36,13 +36,34 @@ const Footer = () => {
       </div>
       <div className="icons-footer">
         <div className="icons-foo">
-          <BsInstagram />
+          <Link
+            className="icons-foo"
+            to={'https://www.instagram.com/Greengoboutique/'}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <BsInstagram />
+          </Link>
         </div>
         <div className="icons-foo">
-          <FaTiktok />
+          <Link
+            className="icons-foo"
+            to={'https://www.tiktok.com/explore'}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaTiktok />
+          </Link>
         </div>
         <div className="icons-foo">
-          <FaFacebookSquare />
+          <Link
+            className="icons-foo"
+            to={'https://www.facebook.com/'}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebookSquare />
+          </Link>
           <div />
         </div>
       </div>
