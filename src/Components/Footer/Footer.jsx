@@ -24,13 +24,19 @@ const Footer = () => {
 
         <div className="footer-links">
           <div className="link-foo">
-            <Link to={'/womens'}>Mujeres</Link>
+            <Link className="links-foo" to={'/womens'}>
+              Mujeres
+            </Link>
           </div>
           <div className="link-foo">
-            <Link to={'/mens'}>Hombres</Link>
+            <Link className="links-foo" to={'/mens'}>
+              Hombres
+            </Link>
           </div>
-          <div>
-            <Link to={'/kids'}>Ninos</Link>
+          <div className="link-foo">
+            <Link className="links-foo" to={'/kids'}>
+              Ninos
+            </Link>
           </div>
         </div>
       </div>

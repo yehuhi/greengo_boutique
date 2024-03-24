@@ -266,6 +266,40 @@ color: rgb(134, 134, 1);
 }
 } 
 
-@media (width >= 600px){
+@media (width > 600px) and (width <= 768px){
+    .nav-menu {
+        gap: 0;
+    }
+
+    .nav-login-cart {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .p2 {
+        text-align: center;
+    }
+
+    .new-cont {
+        overflow-x: hidden;
+    }
+
+}
+@media (width > 768px) and (width <= 992px){
+    .nav-menu {
+        gap: 0;
+    }
+
+    .nav-login-cart {
+        margin: 0 20px;
+    }
+
+    .p2 {
+        text-align: center;
+    }
+
+    .new-cont {
+        overflow-x: hidden;
+    }
 
 }

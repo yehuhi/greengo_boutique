@@ -172,3 +172,15 @@
   width: 83% !important;
 }
 }
+
+@media (width > 600px) and (width <= 768px){
+  .all-details {
+    overflow-x: hidden;
+}
+}
+
+@media (width > 768px) and (width <= 992px){
+  .data-details {
+    width: 400px !important;
+}
+}

@@ -153,14 +153,6 @@ label{
         color: green;
     }
 
-
-        /* .order-btn:hover {
-            background-color: green;
-            border: 1px solid white;
-            color: white;
-        } */
-
-
     .form {
         width: 100%;
         height: calc(100% - 71px);
@@ -200,5 +192,26 @@ label{
         font-weight: 600;
         cursor: pointer;
     }   
+
+}
+
+
+@media (width > 600px) and (width <= 768px){
+    .prof-content {
+        width: 90%;
+    }
+    .inputs {
+        font-size: 18px;
+    }
+
+}
+
+@media (width > 768px) and (width <= 992px){
+    .prof-content {
+        width: 90%;
+    }
+    .inputs {
+        font-size: 18px;
+    }
 
 }
