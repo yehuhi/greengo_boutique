@@ -8,7 +8,7 @@
 }
 
 .prof-content {
-    width: 30%;
+    width: 50%;
     height: 100%;
     overflow-y: auto;
 }
@@ -71,7 +71,7 @@ label{
     font-size: 15px;    }   
 
 .inputs{
-    /* margin-top: 30px; */
+font-size: 18px;
     border: 0;
     outline: none;
     width: 75%;
