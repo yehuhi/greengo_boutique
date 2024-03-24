@@ -19,6 +19,14 @@
     align-items: center;
 }
 
+.signup_content{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .inputs_form {
     width: 100%;
     height: 50%;
@@ -46,6 +54,11 @@
     padding-left: 15px;
     border-radius: 7px;
     border: none;
+}
+
+.input_fields_login{
+    width: 50%;
+    height: 30%;
 }
 
 .input_fields{
