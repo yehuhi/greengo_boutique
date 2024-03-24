@@ -293,3 +293,10 @@ color:grey
         width: 75%;
     }
 }
+
+@media (width > 600px) and (width <= 768px){
+    .content_form {
+        width: 55%;
+    }
+
+}
