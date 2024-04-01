@@ -25,17 +25,17 @@ const Footer = () => {
         <div className="footer-links">
           <div className="link-foo">
             <Link className="links-foo" to={'/womens'}>
-              Mujeres
+              MUJERES
             </Link>
           </div>
           <div className="link-foo">
             <Link className="links-foo" to={'/mens'}>
-              Hombres
+              HOMBRES
             </Link>
           </div>
           <div className="link-foo3">
             <Link className="links-foo" to={'/kids'}>
-              Ninos
+              NIÑOS
             </Link>
           </div>
         </div>

@@ -13,7 +13,7 @@ const Breadcrum = props => {
   } else if (props.page === 'mens' || props.page.type === 'mens') {
     setBreadCrum('HOMBRES');
     pageTitle = 'HOMBRES';
-  } else if (props.page === 'kids' && props.page.type === 'kids') {
+  } else if (props.page === 'kids' || props.page.type === 'kids') {
     setBreadCrum('NIÑOS');
     pageTitle = 'NIÑOS';
   }
