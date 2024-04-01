@@ -191,9 +191,14 @@ color:grey
         cursor: pointer;
     }
 
+    .input_fields_login {
+        width: 70% !important;
+        height: 35%;
+    }
+
     .input_fields {
         width: 70%;
-        height: 30%;
+        height: 25%;
     }
 
     .no_register {
@@ -266,7 +271,7 @@ color:grey
     }
 
     .input_fields_login {
-        width: 70%;
+        width: 70% !important;
         height: 35%;
     }
     .input_fields {
