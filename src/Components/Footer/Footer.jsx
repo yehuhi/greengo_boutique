@@ -33,7 +33,7 @@ const Footer = () => {
               Hombres
             </Link>
           </div>
-          <div className="link-foo">
+          <div className="link-foo3">
             <Link className="links-foo" to={'/kids'}>
               Ninos
             </Link>

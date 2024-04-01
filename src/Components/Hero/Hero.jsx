@@ -1,27 +1,90 @@
-import React from 'react'
-import "./Hero.css"
+import React, { useEffect, useState } from 'react';
+import { ShopState } from '../../Context/ShopProvider';
+
+import './Hero.css';
 
 const Hero = () => {
-  return (
-    <div className='hero-cont'>
-      <div className='div_p'>
-        <p className='p1'>LA GUIA DE REGALOS PARA EL DIA DE SAN VALENTIN</p>
-        <p className='p2'>Celebra el Día de San Valentín con colores vivos, looks apasionantes para una cita nocturna y regalos a juego, como nuestro nuevo bolso Tribeca.</p>
-      </div>
-  
-    <div className='images-hero'>
-      <div className="image-hero1">
-        <img className='img-hero' src="https://www.beyoung.in/blog/wp-content/uploads/2023/01/The-Shoulder-Bag-853x1024.jpg" alt="" />
-      </div>
-      <div className="image-hero1">
-        <img className='img-hero' src="https://5.imimg.com/data5/SELLER/Default/2023/6/317537012/JU/CL/VG/185931781/zjmc10-12--500x500.jpg" alt="" />
-      </div>
-      <div className="image-hero1">
-        <img className='img-hero' src="https://www.guess.ae/dw/image/v2/BDDB_PRD/on/demandware.static/-/Sites-guess-master-catalog/default/dw04e7db67/images/BG787924_CLO_05.jpg?sw=800&sh=1040" alt="" />
-      </div>
-     </div>
-    </div>
-  )
-}
+  const [updateData, setUpdateData] = useState(null);
+  const {
+    filtered,
+    setFiltered,
+    favorite,
+    setFavorite,
+    cart,
+    setCart,
+    datos,
+    setDatos
+  } = ShopState();
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
-export default Hero
+  const fetchData = () => {
+    fetch('https://script.googleusercontent.com/macros/echo?user_content_key=G9Y70TKpg3_zMJIDg1Zb1BNUX3QvZlN8HruKvU9vBdM8Vsu-V6w2Cx5q3oCHOqmbCNEjh4axc4DUWkfc1eUqR9gzDlisolCbm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnMwpOhq36CtnQItMg5j0hL08pR1MMtpWtgyujCTAPe0qcpOo942aDv-1nGmTfLM070wK6B7JdV45LK0oTMy089UeRO0rd8CSMNz9Jw9Md8uu&lib=MhpLCRi-dbxcPVauODzr0fwVH-hBlMqS6')
+      .then(response => response.json())
+      .then(data => {
+        // Filter the data to include only objects where sheetName is "homepage" and id is not "TYPE"
+        const filteredData = data.data.filter(item => item.sheetName === 'homepage' && item.id !== 'TYPE');
+  
+        // Set the filtered data
+        setUpdateData(filteredData);
+        setDatos(filteredData);
+        // console.log('HOMEPAGE STORE DATA > ', filteredData);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  };
+  
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  return (
+    <div className="hero-cont" style={{ height: "auto" }}>
+      {updateData?.map((item, index) => (
+        <div key={index} className='hero-cont-inside'>
+          <div className="div_p">
+            <p className="p1">
+              {item.PRODUCT ? item.PRODUCT : ''}
+            </p>
+            <p className="p2">
+              {item.PURCHASE_PRICE ? item.PURCHASE_PRICE : 'TESSST'}
+            </p>
+          </div>
+
+          <div className="images-hero">
+            {item.price && (
+              <div className="image-hero1">
+                <img
+                  className="img-hero"
+                  src={item.price}
+                  alt="Image 1"
+                />
+              </div>
+            )}
+            {item.PRICE_IN_COL && (
+              <div className="image-hero1">
+                <img
+                  className="img-hero"
+                  src={item.PRICE_IN_COL}
+                  alt="Image 2"
+                />
+              </div>
+            )}
+            {item.brand && (
+              <div className="image-hero1">
+                <img
+                  className="img-hero"
+                  src={item.brand}
+                  alt="Image 3"
+                />
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Hero;

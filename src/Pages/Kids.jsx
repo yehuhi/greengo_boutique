@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import Filter from '../Components/Filter/Filter'
-import Products from '../Components/Products/Products'
-import "./Womens.css"
+import React, { useEffect, useState } from 'react';
+import Filter from '../Components/Filter/Filter';
+import Products from '../Components/Products/Products';
+import './Womens.css';
 import Breadcrum from '../Components/Breadcrum/Breadcrum';
 
 const Kids = () => {
@@ -28,22 +28,21 @@ const Kids = () => {
   };
 
   return (
-    <div className='women-cont'>
+    <div className="women-cont">
       <Breadcrum page={'kids'} />
-      <div className='filters'>
-        {isMobile && (
-          <div className='open-filters' onClick={toggleFilters}>
+      <div className="filters">
+        {isMobile &&
+          <div className="open-filters" onClick={toggleFilters}>
             {openFilters ? 'CERRAR FILTROS' : 'FILTROS'}
-          </div>
-        )}
+          </div>}
         {isMobile && openFilters && <Filter />}
       </div>
-      <div className='new-container'>
+      <div className="new-container">
         {!isMobile && <Filter />}
-        <Products />
+        <Products type={'kids'} />
       </div>
     </div>
   );
 };
 
-export default Kids
+export default Kids;

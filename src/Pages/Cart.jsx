@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Cart.css';
-import data from '../Components/Assets/data';
+// import data from '../Components/Assets/data';
 import { ShopState } from '../Context/ShopProvider';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { useAuth } from '../Context/authContext/';
@@ -18,8 +18,11 @@ const Cart = () => {
     setCart,
     cartCount,
     setCartCount,
+    data,
+    setData,
   } = ShopState();
   const [cartItems, setCartItems] = useState([]);
+  const [cartDataItems, setCartDataItems] = useState([]);
   const [cartItemsEnd, setCartItemsEnd] = useState([]);
   const [totalPrice, setTotalPrice] = useState([]);
   const [selectedValue, setSelectedValue] = useState(null);
@@ -40,11 +43,13 @@ const Cart = () => {
   };
 
   const cartFetch = () => {
-    // console.log("CARITEMS <> ", cartItems);
+    // console.log('data CARITEMS <> ', data);
+    // console.log('data cartDataItems <> ', cartDataItems);
     setCartCount(cartItems);
-    let dato = data.filter(item =>
+    let dato = cartDataItems.filter(item =>
       cartItems.some(cartItem => cartItem.id === item.id)
     );
+
     // Add colorSelected, sizeSelected, and amount to the relevant item in cartItems
     dato = dato.map(item => {
       const cartItem = cartItems.find(c => c.id === item.id);
@@ -53,18 +58,19 @@ const Cart = () => {
         colorSelected: cartItem.colorSelected,
         sizeSelected: cartItem.sizeSelected,
         amount: cartItem.amount,
-        price: cartItem.amount * item.new_price,
+        priceT: cartItem.amount * item.price,
       };
     });
     setCartItemsEnd(dato);
     const total = dato.reduce(
-      (total, currentItem) => total + Number(currentItem.price),
+      (total, currentItem) => total + Number(currentItem.priceT),
       0
     );
     setTotalPrice(total);
-    localStorage.setItem('totalCartForPay', JSON.stringify(total));
-    localStorage.setItem('itemsCart', JSON.stringify(cartItemsEnd));
-
+    if (dato && dato[0] && cartDataItems && cartDataItems[0]) {
+      localStorage.setItem('totalCartForPay', JSON.stringify(total));
+      localStorage.setItem('itemsCart', JSON.stringify(cartItemsEnd));
+    }
     // console.log("DATOS >> ", dato);
   };
 
@@ -122,7 +128,9 @@ const Cart = () => {
 
   useEffect(() => {
     const data_cart = JSON.parse(localStorage.getItem('cartItems')) || [];
-    setCartItems(data_cart);
+    setCartItems(data_cart || []);
+    const data_carta = JSON.parse(localStorage.getItem('itemsCart')) || [];
+    setCartDataItems(data_carta || []);
 
     // Initialize colorSelected state with default colors from fetchedData
     const defaultColors = data_cart.reduce((acc, item) => {
@@ -130,7 +138,6 @@ const Cart = () => {
       return acc;
     }, {});
     setColorSelected(defaultColors);
-    // setCartItemsEnd(data_cart);
 
     // Initialize sizeSelected state with default sizes from fetchedData
     const defaultSizes = data_cart.reduce((acc, item) => {
@@ -139,19 +146,21 @@ const Cart = () => {
     }, {});
     setSelectedSizeValue(defaultSizes);
 
-    // Initialize sizeSelected state with default sizes from fetchedData
-    const defaultAmounts = data_cart.reduce((acc, item) => {
+    // Initialize quantity state with default quantities from fetchedData
+    const defaultQuantities = data_cart.reduce((acc, item) => {
       acc[item.id] = item.amount;
       return acc;
     }, {});
-    setSelectedValue(defaultAmounts);
+    setSelectedValue(defaultQuantities);
 
-    setCartItemsEnd(data_cart);
+    setCartItemsEnd(data_cart); // Set cartItemsEnd with the parsed data
   }, []);
 
   useEffect(
     () => {
+      // if (cartDataItems && cartDataItems[0]) {
       cartFetch();
+      // }
     },
     [cartItems, cart]
   ); // Only depend on cartItems
@@ -213,7 +222,7 @@ const Cart = () => {
             : ''}
         </div>
 
-        <div className="all-details">
+        <div className="all-details_cart">
           {/* PRODUCT DETAILS */}
           {cartItemsEnd[0] &&
             cartItemsEnd.map((item, i) => {
@@ -221,7 +230,11 @@ const Cart = () => {
                 <div key={i} className="detail">
                   <div className="detail-image">
                     <div className="img-detail">
-                      <img className="image-cart" src={item.image} alt="img" />
+                      <img
+                        className="image-cart"
+                        src={item.images ? item.images : item.image[0]}
+                        alt="img"
+                      />
                     </div>
                     <div className="data-details">
                       <span
@@ -230,7 +243,7 @@ const Cart = () => {
                         {item.brand}
                       </span>
                       <span className="item-name">
-                        {item.name}
+                        {item.PRODUCT}
                       </span>
                       <div
                         style={{
@@ -255,7 +268,7 @@ const Cart = () => {
                         )}
                       </div>
                       <span style={{ fontFamily: 'math', color: 'grey' }}>
-                        ${item.new_price},000
+                        ${item.price},000
                       </span>
                       <span style={{ fontFamily: 'math', display: 'flex' }}>
                         {' '}<span className="font-title">TALLA:</span>
@@ -348,7 +361,7 @@ const Cart = () => {
                           </select>
                         </div>
                         <div style={{ marginRight: '25px' }}>
-                          ${item.price},000
+                          ${item.priceT},000
                         </div>
                         <div
                           className="remove-icon-cart"

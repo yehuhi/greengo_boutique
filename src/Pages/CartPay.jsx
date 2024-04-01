@@ -62,8 +62,9 @@ const CartPay = () => {
         const dbRef = ref(db, `orders/${auth.currentUser.uid}`);
         const userId = auth.currentUser.uid;
         try {
-          const snapshot = await get(dbRef);
-
+          // const snapshot = await get(dbRef);
+          console.log('TEST BUY > ', userId);
+          // console.log('TEST BUY DB > ', dbRef);
           if (userId) {
             // If data doesn't exist, save it with a new unique ID
             const newDataRef = push(dbRef); // Generate a new unique ID

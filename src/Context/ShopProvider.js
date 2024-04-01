@@ -8,6 +8,8 @@ const ShopProvider = ({ children }) => {
     const [favorite, setFavorite] = useState([]);
     const [cartCount, setCartCount] = useState(0);
     const [user, setUser] = useState({});
+    const [datos, setDatos] = useState([]);
+    const [data, setData] = useState([]);
     const [breadCrum, setBreadCrum] = useState("");
 
   
@@ -28,7 +30,11 @@ const ShopProvider = ({ children }) => {
          cartCount,
          setCartCount,
          breadCrum,
-         setBreadCrum
+         setBreadCrum,
+         datos,
+        setDatos,
+        data,
+         setData
         }}
       >
         {' '}

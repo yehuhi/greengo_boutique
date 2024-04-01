@@ -1,14 +1,19 @@
 .hero-cont{
     width: 100%;
     margin-top: 81px;
-    height: calc(100vh - 75px);
+    /* height: calc(100vh - 75px); */
+    height: auto;
     background-color: transparent;
+}
+.hero-cont-inside{
+    height: calc(100vh - 81px);
 }
 
 .hero-cont2{
     width: 100%;
     margin-top: 41px;
-    height: calc(100vh - 75px);
+    /* height: calc(100vh - 75px); */
+    height: auto;
     background-color: transparent;
 }
 
@@ -58,6 +63,13 @@
         margin-top: 0;
         height: auto;
         margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-cont-inside {
+        height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;

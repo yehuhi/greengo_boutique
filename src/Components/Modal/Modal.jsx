@@ -22,14 +22,14 @@ const Modal = ({ closeModal, dataCart }) => {
 
     // Generate table rows for each product and calculate total price
     dataCart.forEach(product => {
-      const productTotalPrice = product.new_price * product.amount;
+      const productTotalPrice = product.price * product.amount;
       totalPrice += productTotalPrice;
       productsTableRows += `  
         <tr>
             <td>${product.name}</td>
             <td>${product.brand}</td>
             <td>${product.amount}</td>
-            <td>$${product.new_price},000</td>
+            <td>$${product.price},000</td>
             <td>${product.colorSelected}</td>
             <td>${product.sizeSelected}</td>
             <td>$${productTotalPrice},000</td>

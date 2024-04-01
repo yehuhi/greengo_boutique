@@ -42,7 +42,7 @@ const Womens = ({ filterBy }) => {
       </div>
       <div className="new-container">
         {!isMobile && <Filter />}
-        <Products />
+        <Products type={'womens'} />
       </div>
     </div>
   );

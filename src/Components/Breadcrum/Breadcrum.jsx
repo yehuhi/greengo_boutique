@@ -6,15 +6,14 @@ import { ShopState } from '../../Context/ShopProvider';
 const Breadcrum = props => {
   const { breadCrum, setBreadCrum } = ShopState();
 
-  // console.log('SECTION > ', props);
   let pageTitle = '';
-  if (props.page === 'womens') {
+  if (props.page === 'womens' || props.page.type === 'womens') {
     setBreadCrum('MUJERES');
     pageTitle = 'MUJERES';
-  } else if (props.page === 'mens') {
+  } else if (props.page === 'mens' || props.page.type === 'mens') {
     setBreadCrum('HOMBRES');
     pageTitle = 'HOMBRES';
-  } else if (props.page === 'kids') {
+  } else if (props.page === 'kids' && props.page.type === 'kids') {
     setBreadCrum('NIÑOS');
     pageTitle = 'NIÑOS';
   }
@@ -22,15 +21,10 @@ const Breadcrum = props => {
   return (
     <div className="bread-cont">
       <span style={{ cursor: 'pointer' }}>
-        {/* <Link
-          to={`/${props.page.value ? props.page.value : props.page}`}
-          style={{ textDecoration: 'none', color: 'black' }}
-        >{`${(props.page.value === 'womens'
-          ? props.page.value
-          : 'MUJERES').toUpperCase()}`}</Link> */}
-
         <Link
-          to={`/${props.page.value ? props.page.value : props.page}`}
+          to={`/${props.page.value
+            ? props.page.value
+            : props.page.type ? props.page.type : props.page}`}
           style={{ textDecoration: 'none', color: 'black' }}
         >
           {`${breadCrum.toUpperCase()}`}

@@ -138,7 +138,7 @@ const Orders = () => {
                     <div className="img-detail">
                       <img
                         className="image-cart"
-                        src={item.items[0].image}
+                        src={item.items[0].images}
                         alt="img"
                       />
                     </div>
@@ -147,7 +147,7 @@ const Orders = () => {
                         {item.items[0].brand}
                       </span>
                       <span className="item-name">
-                        {item.items[0].name}
+                        {item.items[0].PRODUCT}
                       </span>
                       <div style={{ display: 'flex', alignItems: 'center' }}>
                         <span className="font-title">COLOR:</span>
@@ -164,7 +164,7 @@ const Orders = () => {
                       </div>
                       <div>
                         <span className="font-title">
-                          PRECIO: ${item.items[0].new_price},000
+                          PRECIO: ${item.items[0].price},000
                         </span>
                       </div>
                       <span style={{ display: 'flex', alignItems: 'center' }}>
