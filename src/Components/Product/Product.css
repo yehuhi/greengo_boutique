@@ -128,11 +128,11 @@ color: green;
 @media (width < 600px){
     .prods {
         width: 170px;
-        height: 370px;
+        height: 320px;
     }
 
     .image-img{
-        height: 245px;
+        height: 185px;
     }
 
 
