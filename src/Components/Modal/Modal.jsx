@@ -67,16 +67,16 @@ const Modal = ({ closeModal, dataCart }) => {
       message: dataBuyed,
     };
 
-    // emailjs
-    //   .send(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, formData, YOUR_PUBLIC_KEY)
-    //   .then(
-    //     () => {
-    //       console.log('SUCCESS!');
-    //     },
-    //     error => {
-    //       console.log('FAILED...', error.text);
-    //     }
-    //   );
+    emailjs
+      .send(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, formData, YOUR_PUBLIC_KEY)
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        error => {
+          console.log('FAILED...', error.text);
+        }
+      );
 
     localStorage.setItem('cartItems', JSON.stringify([]));
     // navigate('/profile');

@@ -220,13 +220,18 @@ const Favorites = () => {
                     </div>
                   );
                 })}
-              {!favoriteItemsEnd[0]
-                ? <div className="favorite-empty">
+              {/* {!favoriteItems && !favoriteItems[0]
+                ? <div style={{ color: 'red' }} className="favorite-empty">
                     AGREGA ALGO LINDO A TUS FAVORITOS
                   </div>
-                : ''}
+                : 'TEST'} */}
             </div>
           : ''}
+        {!favoriteItemsEnd[0]
+          ? <div className="favorite-empty">
+              AGREGA ALGO LINDO A TUS FAVORITOS
+            </div>
+          : 'TEST'}
       </div>
     </div>
   );
