@@ -231,7 +231,7 @@ const Favorites = () => {
           ? <div className="favorite-empty">
               AGREGA ALGO LINDO A TUS FAVORITOS
             </div>
-          : 'TEST'}
+          : ''}
       </div>
     </div>
   );
