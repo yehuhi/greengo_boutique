@@ -125,9 +125,9 @@ const Favorites = () => {
                   return (
                     <div key={i} className="detail">
                       <div className="detail-image">
-                        {favoriteItemsEnd && favoriteItemsEnd[0].images
+                        {favoriteItemsEnd && favoriteItemsEnd[0].image
                           ? <div className="img-detail">
-                              {item.images.map((img, a) => {
+                              {item.image.map((img, a) => {
                                 return (
                                   <img
                                     key={a}
