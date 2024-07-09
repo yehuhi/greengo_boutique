@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { FaGoogle } from 'react-icons/fa';
 import './Login.css';
-import { NavLink, Navigate } from 'react-router-dom';
+import { NavLink, Navigate, useNavigate } from 'react-router-dom';
 import {
   doSignInWithEmailAndPassword,
   doSignWithGoggle,
 } from '../../../firebase/auth';
 import { useAuth } from '../../../Context/authContext/';
+import Toast from '../../../Components/Toast/Toast';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -14,14 +15,18 @@ const Login = () => {
   const [isSigninIn, setIsSigninIn] = useState(false);
   const [errorMesg, setErrorMsg] = useState('');
   const { userLoggedIn } = useAuth();
+  const navigate = useNavigate();
+  const [showWarningToast, setShowWarningToast] = useState(false);
 
   const onSubmit = async e => {
     e.preventDefault();
     if (!isSigninIn) {
       setIsSigninIn(true);
       await doSignInWithEmailAndPassword(email, password).catch(err => {
+        navigate('/login');
+        setShowWarningToast(true);
         setIsSigninIn(false);
-        setErrorMsg(err);
+        setErrorMsg('Inserta datos correctos');
       });
     }
   };
@@ -73,7 +78,7 @@ const Login = () => {
             />
           </div>
           {errorMesg &&
-            <span style={{ color: 'green', fontSize: '14px' }}>
+            <span style={{ color: 'orange', fontSize: '14px' }}>
               {errorMesg}
             </span>}
           <input
@@ -109,6 +114,13 @@ const Login = () => {
           <FaGoogle />&nbsp;&nbsp;Cuenta de Google
         </div>
       </div>
+      {showWarningToast &&
+        <Toast
+          message="Datos Errados!"
+          duration={3000}
+          color="orange"
+          onClose={() => setShowWarningToast(false)}
+        />}
     </div>
   );
 };

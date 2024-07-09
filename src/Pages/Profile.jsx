@@ -31,8 +31,60 @@ const Profile = () => {
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
 
+  // const saveOrUpdateData = async () => {
+  //   const db = getDatabase(app);
+
+  //   const currentUser = auth.currentUser;
+
+  //   if (!currentUser) {
+  //     // User is not logged in, handle this case (e.g., redirect to login)
+  //     navigate('/login');
+  //     return;
+  //   }
+
+  //   const userId = currentUser.uid;
+  //   console.log('currentUser save the new user >>> ', currentUser);
+  //   console.log('userId save the new user >>> ', userId);
+
+  //   const userRef = ref(db, `users/${userId}`);
+
+  //   try {
+  //     const snapshot = await get(userRef);
+  //     if (snapshot.exists()) {
+  //       // If data exists, update it
+  //       await set(
+  //         userRef,
+  //         {
+  //           userName: fullname,
+  //           email,
+  //           phone,
+  //           city,
+  //           address,
+  //         },
+  //         { merge: true }
+  //       );
+  //       alert('Datos Actualizados');
+  //     } else {
+  //       // If data doesn't exist, save it
+  //       const newData = push(ref(db, 'users'));
+  //       await set(newData, {
+  //         userName: fullname,
+  //         email,
+  //         phone,
+  //         city,
+  //         address,
+  //       });
+  //       alert('Datos Guardados !!!');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error saving/updating data:', error);
+  //     alert('Error al guardar info');
+  //   }
+  // };
+
   const saveOrUpdateData = async () => {
     const db = getDatabase(app);
+
     const currentUser = auth.currentUser;
 
     if (!currentUser) {
@@ -42,44 +94,41 @@ const Profile = () => {
     }
 
     const userId = currentUser.uid;
+    console.log('currentUser save the new user >>> ', currentUser);
+    console.log('userId save the new user >>> ', userId);
+
     const userRef = ref(db, `users/${userId}`);
 
     try {
       const snapshot = await get(userRef);
       if (snapshot.exists()) {
         // If data exists, update it
-        await set(
-          userRef,
-          {
-            userName: fullname,
-            email,
-            phone,
-            city,
-            address,
-          },
-          { merge: true }
-        );
-        alert('DATA UPDATED');
-      } else {
-        // If data doesn't exist, save it
-        const newData = push(ref(db, 'users'));
-        await set(newData, {
+        await set(userRef, {
           userName: fullname,
           email,
           phone,
           city,
           address,
         });
-        alert('DATA SAVED');
+        alert('Datos Actualizados');
+      } else {
+        // If data doesn't exist, save it
+        await set(userRef, {
+          userName: fullname,
+          email,
+          phone,
+          city,
+          address,
+        });
+        alert('Datos Guardados !!!');
       }
     } catch (error) {
       console.error('Error saving/updating data:', error);
-      alert('Error saving/updating data');
+      alert('Error al guardar info');
     }
   };
 
   const fetchData = async () => {
-    console.log('auth > ', auth);
     const db_data = getDatabase(app);
     const currentUser = auth.currentUser;
 
@@ -88,6 +137,7 @@ const Profile = () => {
       navigate('/login');
       return;
     }
+    // console.log('auth from the new user >>> ', currentUser.uid);
 
     const userId = currentUser.uid;
     const userRef = ref(db_data, `users/${userId}`);
@@ -95,6 +145,8 @@ const Profile = () => {
     try {
       const snapshot = await get(userRef);
       if (snapshot.exists()) {
+        // console.log('DONE! the new user >>> ', auth.currentUser.uid);
+
         const userData = snapshot.val();
         setFullname(userData.userName);
         setEmail(userData.email);
@@ -105,7 +157,7 @@ const Profile = () => {
         setUser(userData);
       } else {
         // Handle case where user data does not exist
-        console.log('No data available for the current user');
+        console.log('No data available for the current user =( ');
       }
     } catch (error) {
       console.error('Error fetching data:', error);

@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 const YOUR_SERVICE_ID = 'service_66m4mra';
 const YOUR_TEMPLATE_ID = 'template_wsw8hsh';
-const YOUR_PUBLIC_KEY = 'user_t7UGGaRJWwsJYYtxAUIIO';
+const YOUR_PUBLIC_KEY = 'hmVDKL2hNRxtTIbmr';
 
 const Modal = ({ closeModal, dataCart }) => {
   const [userData, setUserData] = useState('');
