@@ -17,7 +17,7 @@ const Footer = () => {
             mejores marcas internacionales para todas las edades.
           </span>
           <span className="txt-span">
-            Tambien recibimos pedidos de productos que no encuentren en nuestar
+            Tambien recibimos pedidos de productos que no encuentren en nuestra
             pagina web.
           </span>
         </div>
