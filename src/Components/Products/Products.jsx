@@ -209,11 +209,11 @@ const Products = ({ type }) => {
             <div className="loading-spinner">
               <img
                 src={loadingImg} // Replace with the path to your image
-                alt="Loading..."
+                alt="Cargando..."
                 className="spinner-image"
               />
               <br />
-              <span style={{ color: 'white' }}>Loading...</span>
+              <span style={{ color: 'white' }}>Cargando...</span>
             </div>
           </div>
         : filteredProducts
