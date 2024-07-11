@@ -4,6 +4,7 @@ import loadingImg from '../Components/Assets/logo2.png';
 import Footer from '../Components/Footer/Footer';
 import { ShopState } from '../Context/ShopProvider';
 import './New.css';
+import WhatsAppButton from '../Components/Whatsapp/Whatsapp-btn';
 
 const New = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -58,6 +59,7 @@ const New = () => {
         </div>}
       <Hero />
       {!isLoading && <Footer />}
+      <WhatsAppButton />
     </div>
   );
 };
