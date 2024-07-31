@@ -143,6 +143,7 @@ const Filter = () => {
                           value={item}
                           name={item}
                           type="checkbox"
+                          style={{ accentColor: 'rgb(15 133 5)' }}
                           onChange={e =>
                             handleCheckboxChange('category', e.target)}
                           checked={filtered.categories.includes(item)}
@@ -188,6 +189,7 @@ const Filter = () => {
                         <input
                           value={item}
                           name={item}
+                          style={{ accentColor: 'rgb(15 133 5)' }}
                           type="checkbox"
                           onChange={e =>
                             handleCheckboxChange('brand', e.target)}
@@ -234,6 +236,7 @@ const Filter = () => {
                         <input
                           value={item}
                           name={item}
+                          style={{ accentColor: 'rgb(15 133 5)' }}
                           type="checkbox"
                           onChange={e =>
                             handleCheckboxChange('price', e.target)}
@@ -280,6 +283,7 @@ const Filter = () => {
                         <input
                           value={item}
                           name={item}
+                          style={{ accentColor: 'rgb(15 133 5)' }}
                           type="checkbox"
                           onChange={e =>
                             handleCheckboxChange('color', e.target)}
@@ -326,6 +330,7 @@ const Filter = () => {
                         <input
                           value={item}
                           name={item}
+                          style={{ accentColor: 'rgb(15 133 5)' }}
                           type="checkbox"
                           onChange={e => handleCheckboxChange('size', e.target)}
                           checked={filtered.sizes.includes(item)}

@@ -3,7 +3,7 @@ import React from 'react';
 import { IoLogoWhatsapp } from 'react-icons/io';
 
 const WhatsAppButton = () => {
-  const phoneNumber = '+573023608959';
+  const phoneNumber = '+573001533930';
 
   return (
     <a
