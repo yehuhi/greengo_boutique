@@ -7,6 +7,7 @@ import { IoIosArrowForward } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import foto from '../Assets/product_1.png';
 import { ShopState } from '../../Context/ShopProvider';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Product = props => {
   // console.log('LO SELECCIONADO ES > ', props);
@@ -83,7 +84,7 @@ const Product = props => {
                 className="favorite-icon"
               />}
 
-        <Link to={`/product/${props.id}`}>
+        {/* <Link to={`/product/${props.id}`}>
           <img
             className="image-img prevent-select"
             src={
@@ -93,7 +94,22 @@ const Product = props => {
             }
             alt="carousel"
           />
+        </Link> */}
+        <Link to={`/product/${props.id}`}>
+          <LazyLoadImage
+            className="image-img prevent-select"
+            src={
+              props.image[currentImage] !== 'imageLink'
+                ? props.image[currentImage]
+                : foto
+            }
+            alt="carousel"
+            effect="blur"
+            width="100%" // Set the width to 100% of its parent container
+            height="270px" // Maintain the aspect ratio
+          />
         </Link>
+
         <div className="arrow-left-p ">
           <IoIosArrowBack
             onClick={event => handleArrowClick('prev', event)}
