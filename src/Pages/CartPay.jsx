@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './CartPay.css';
 import nequi_QR from '../Components/Assets/QR_NEQUI.png';
+import bancolombia_QR from '../Components/Assets/qr_bancolombia';
+import nequi_QR from '../Components/Assets/QR_NEQUI.png';
+
 import Modal from '../Components/Modal/Modal';
 import { app, auth, db } from '../firebase/firebase';
 import { getDatabase, ref, set, push, get } from 'firebase/database';
@@ -186,7 +189,7 @@ const CartPay = () => {
               </p>
             </div>
             <div>
-              <img className="img-card" src={nequi_QR} alt="QR" />
+              <img className="img-card" src={bancolombia_QR} alt="QR" />
             </div>
             <div className="txt-btn">
               <p className="text-btn">
